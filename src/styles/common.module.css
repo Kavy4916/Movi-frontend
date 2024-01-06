@@ -13,32 +13,6 @@ a{
     text-decoration: none;
 }
 
-/*Horizontal_list-> hl */
-
-/* Movie-page*/
-.movie_title{
-  color: #9349a9;
-  text-transform: capitalize;
-}
-
-.movie_image{
-  width: 600px;
-  height: 350px;
-  border-radius: 20px;
-  margin: 3.2rem 0 3.2rem 0;
-}
-
-.movie_type{
-  margin: 2rem 0 3.2rem 0;
-}
-
-.movie_para{
-  font-size: 2rem;
-  padding: 5px;
-  margin: 2rem 0 10rem 0;
-}
-
-
 
 
 .grid_two_section{
@@ -81,24 +55,6 @@ a{
     background-color: black;
     color: #b569cd;
 }
-
-/*Youtube*/
-.youtube_section{
-  height: 320px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-}
-
-.youtube{
-  height: 280px;
-  width:  500px;
-  border-radius: 10px;
-  padding: 0 auto;
-}
-
 
 
 /*Card Styling*/

@@ -1,7 +1,16 @@
-import styles from "../styles/movieTamplate.module.css";
+import styles from "../styles/moviePage.module.css";
+import { useState } from "react";
 
 //hl -> for styling
-const HorizontalList = ({ movie }) => {
+const MovieData = ({ movie }) => {
+  const [display, setDisplay] = useState(false);
+
+  function handelClick(){
+    setDisplay((prev)=>{
+      return !prev;
+    })
+  }
+
   var count = 1;
   return (
     <div className={styles.hl_container}>
@@ -43,18 +52,18 @@ const HorizontalList = ({ movie }) => {
         <div className={styles.hl_list_item}>{movie.writer}</div>
       </div>
       <hr />
-      <div className={styles.hl_list}>
-        <h3>{"Stars : "}</h3>
-        {movie.cast.map((cur) => {
+      <div className={styles.hl_list} onClick={handelClick}>
+        <h3>{"Stars"}</h3>
+      </div>
+      {display && movie.cast.map((cur) => {
           return (
-            <div key={count++} className={styles.hl_list_item}>
+            <div key={count++} className={styles.hl_cast_list}>
               {cur}
             </div>
           );
         })}
-      </div>
     </div>
   );
 };
 
-export default HorizontalList;
+export default MovieData;

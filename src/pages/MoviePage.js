@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import styles from "../styles/common.module.css"
+import styles from "../styles/moviePage.module.css"
 import { useParams} from "react-router-dom";
 import Loading from "../components/Loading.js";
 import NoMatch from "./NoMatch.js";
-import HorizontalList from "../components/HorizontalList.js";
+import MovieData from "../components/MovieData.js";
 
 
 const MoviePage = ()=>{
@@ -35,7 +35,7 @@ const MoviePage = ()=>{
       }
   return (
     <>
-      <div className={styles.container+" font"}>
+      <div className={styles.container}>
         <h1 className={styles.movie_title}>{movie.title}</h1>
         <div>
             <img
@@ -47,9 +47,10 @@ const MoviePage = ()=>{
         <h2 className={styles.movie_type}>
           {movie.type} / {movie.year} ({movie.userAge})
         </h2>
-        <HorizontalList
+        <MovieData
             movie={movie}
          />
+         <h2 className={styles.movie_para_heading}>Storyline: </h2>
             <p className={styles.movie_para}>{movie.synopsis}</p>
           </div>
         </div>
