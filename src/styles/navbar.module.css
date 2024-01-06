@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+.main_header{
+    padding: 0 6rem;
+    height: 5rem;
+    display: grid;
+    grid-template-columns: 2fr 5fr;
+    border: none;
+    outline: none;
+    font-family: 'Mulish', sans-serif;
+    box-shadow:  0px 5px 5px  #c4c2c2;
+    margin-bottom: 5px;
+    background-color: white;
+}
+
+.navbar_brand{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.logo{
+    font-size: 25px;
+    font-weight: 700;
+    color: #7c189b;
+}
+
+.navbarList a {
+    font-size: 2rem;
+    font-weight: 500;
+    color: #161617;
+}
+
+.navbarList .navbarItem a:hover {
+    color: #a432c7;
+}
+
+.navbarList{
+    height: 5rem;
+    gap: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.navbar button{
+    min-width: 8rem;
+    border: none;
+    outline: none;
+    background-color: inherit;
+    color: inherit;
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+.navbar button:hover {
+    color: #a432c7;
+}
+
+.navbar_icon{
+    display: none;
+}
+
+.sidebarList{
+    display: none;
+    font-family: Mulish, sans-serif;
+    background-color: #fbf7fb ;
+    z-index: 999;
+    width: 60%;
+    border-bottom-left-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 5.3rem;
+    right: 0px;
+    border-left: 2px solid black;
+    transition: display 2s;
+}
+
+.sidebarList a {
+    font-size: 2rem;
+    font-weight: 500;
+    color: rgb(28, 28, 29);
+}
+
+.sidebarList .navbarItem:hover{
+    background-color: rgb(224, 194, 247);
+}
+
+.sidebarList .navbarItem {
+    width: 100%;
+    border-bottom: 2px solid black;
+    line-height: 4rem;
+    text-align: center;
+}
+
+.sidebarList  button {
+    border: none;
+    outline: none;
+    font-size: 2rem;
+    font-weight: 500;
+    color: rgb(28, 28, 29);
+    border-bottom-left-radius: 20px;
+    background-color: #fbf7fb ;
+}
+
+@media screen and (max-width:700px){
+    .main_header{
+        padding: 0 2rem;
+    }
+
+    .navbar{
+        height: 5rem;
+        gap: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    .navbar_icon{
+        background-color: inherit;
+        border: none;
+        outline: none;
+        display: inline;
+        font-weight: 500;
+        color: #161617;
+    }
+
+    
+
+    .navbar_icon img{
+        height: 4rem;
+    }
+
+    .navbarList{
+        display: none;
+    }
+}

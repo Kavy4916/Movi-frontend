@@ -1,0 +1,76 @@
+/*for the main contact section*/
+
+.contact_section{
+    font-family: Mulish, sans-serif;
+    margin: 6rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact_section h2{
+    font-size: 2rem;
+    padding-bottom: 1rem;
+}
+
+
+.contact_section span{
+    color: #9349a9;
+}
+
+.contact_form{
+    max-width: 48rem;
+    min-width: 32rem;
+    padding: 3.2rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    text-align: left;
+}
+
+.input_field{
+    margin-bottom: 2rem;
+}
+
+.label{
+    font-size: 1.5rem;
+    display: block;
+    text-transform: capitalize;
+}
+
+.contact_form input, .contact_form textarea{
+    display: block;
+    border: none;
+    width: 100%;
+    margin-top: .5rem;
+    padding: .8rem 1rem;
+    border-radius: .3rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+.success_msg{
+    padding: 1rem 0 ;
+    text-align: center;
+    color: #a8e48a;
+}
+
+.error_msg{
+    padding: 1rem 0 ;
+    text-align: center;
+    color: red;
+}
+
+.buttom_msg{
+    font-size: 1.2rem;
+    padding-bottom: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
