@@ -23,11 +23,6 @@ const Nav = () => {
               Home
             </Link>
           </div>
-          <div className={styles.navbarItem}>
-            <Link className={styles.navbarLink} to="/about">
-              About
-            </Link>
-          </div>
           {!user && (
             <>
               <div className={styles.navbarItem}>
@@ -39,6 +34,11 @@ const Nav = () => {
           )}
           {user && 
           (<>
+            <div className={styles.navbarItem}>
+            <Link className={styles.navbarLink} to="/watchList">
+              WatchList
+            </Link>
+          </div>      
               <div className={styles.navbarItem}>
                 <Link className={styles.navbarLink} to="/myCreation">
                   Creations

@@ -18,11 +18,15 @@ const Signup = () => {
     first_name: "",
     last_name: "",
     dob: "",
-    password: ""
+    password: "",
+    verified: false,
+    otp: null
   };
 
   const [newUser, setNewUser] = useState(userStructure);
-  const {signup, error} = useSignup();
+  const [otpSent, setOtpSent] = useState(false);
+  var otp = null;
+  var {signup, error} = useSignup();
 
   function handelChange(e) {
     const name = e.target.name;
@@ -33,9 +37,31 @@ const Signup = () => {
     }));
   }
 
+
   async function handelSubmit(e) {
     e.preventDefault();
-    await signup(newUser.email, newUser.first_name, newUser.last_name, newUser.dob, newUser.password);
+    if(!otp){
+      console.log(otp);
+      setOtpSent(true);
+      const result = await signup(newUser.email, newUser.first_name, newUser.last_name, newUser.dob, newUser.password, newUser.otp);
+      otp = result;
+    }
+    else{
+      console.log(otp);
+      if(otp === newUser.otp)
+      {
+        console.log(otp);
+        setNewUser((prev)=>{
+          return {...prev, verified: true}
+        })
+        const result = await signup(newUser.email, newUser.first_name, newUser.last_name, newUser.dob, newUser.password, newUser.otp);
+        if(result.verified)
+        {
+          navigate("/");
+        }
+        else{error = "Something went wrong!"};
+      }
+    }
   }
 
   function handelClick(){
@@ -124,11 +150,27 @@ const Signup = () => {
                 />
               </label>
             </div>
+            { otpSent && (<div className={styles.input_field}>
+              <label htmlFor="otp" className={styles.label}>
+                Enter OTP
+                <input
+                  type="number"
+                  name="otp"
+                  id="otp"
+                  placeholder="Enter OTP"
+                  className={"font"}
+                  value={newUser.otp}
+                  onChange={handelChange}
+                />
+              </label>
+            </div>
+            )}
             <div className={commonStyles.card_button_big}>
             <button type="submit">
-              Sign up
+              {otpSent?  "Verify":"Send OTP"}
             </button>
             </div>
+             {error && <p className={styles.error_msg}>{error}</p>}
              {error && <p className={styles.error_msg}>{error}</p>}
           </form>
           <div className={styles.contact_section}>

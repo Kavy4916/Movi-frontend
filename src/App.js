@@ -4,7 +4,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from "./components/Header.js";
 import Home from "./pages/Home.js"
-import About from "./pages/About.js";
+import WatchList from "./pages/WatchList.js";
 import NoMatch from "./pages/NoMatch.js";
 import MoviePage from './pages/MoviePage.js';
 import CreateMoviePage from './pages/CreateMoviePage.js';
@@ -23,7 +23,7 @@ const App = () => {
         <Routes>
              <Route  index element={<Home />}/>
              <Route path='login' element={<Login />}/>
-             <Route path="about" element={<About />} />
+             <Route path="watchList" element={<WatchList />} />
              <Route path="create" element={<CreateMoviePage />}/>
              <Route path="myCreation" element={<Creation />} />
              <Route path="movie/:id" element={<MoviePage />}/>

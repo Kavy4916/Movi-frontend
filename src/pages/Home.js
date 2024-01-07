@@ -11,7 +11,7 @@ const Movie = () => {
 
   useEffect(() => {
     const fetchAllMovie = async () => {
-      const res = await fetch("https://movi-backend-leot.onrender.com/api/movie/getAll");
+      const res = await fetch("http://localhost:5000/api/movie/getAll");
       const result = await res.json();
       setLoading(false);
       if (!result.error) {
@@ -29,7 +29,7 @@ const Movie = () => {
   }
 
   return (
-      <section className={styles.movieSection}>
+      <section className={styles.movie_Section}>
           <h1>Movies & Series</h1>
           <div className={styles.card_section}>
             {allMovie.map((cur) => {

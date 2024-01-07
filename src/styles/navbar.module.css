@@ -9,6 +9,9 @@ a{
 }
 
 .main_header{
+    width: 100%;
+    position: sticky;
+    top: 0;
     padding: 0 6rem;
     height: 5rem;
     display: grid;
@@ -72,15 +75,14 @@ a{
 .sidebarList{
     display: none;
     font-family: Mulish, sans-serif;
-    background-color: #fbf7fb ;
-    z-index: 999;
+    background-color: #fbf7fb;
     width: 60%;
     border-bottom-left-radius: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: absolute;
-    top: 5.3rem;
+    position: fixed;
+    top: 5rem;
     right: 0px;
     border-left: 2px solid black;
     transition: display 2s;

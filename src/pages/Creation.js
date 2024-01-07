@@ -2,14 +2,20 @@ import styles from "../styles/home.module.css";
 import Box from "../components/Box.js";
 import Loading from "../components/Loading.js";
 import { useEffect, useState } from "react";
-import ErrorPage from "./ErrorPage.js";
+import commonStyles from "../styles/common.module.css";
 import useAuthContext from "../hooks/useAuthContext.js";
+import { useNavigate } from "react-router-dom";
 
 const Creation = () => {
+  const navigate = useNavigate();
   const {user} = useAuthContext();
   const [allMovie, setAllMovie] = useState();
   const [loading, setLoading] = useState(true);
   const [empty, setEmpty] = useState(null);
+
+  function handelClick(e){
+    navigate("/create");
+  }
 
   useEffect(() => {
     const fetchAllMovie = async () => {
@@ -36,7 +42,7 @@ const Creation = () => {
   return (
     <>
     { !empty &&
-      (<section className={styles.movieSection}>
+      (<section className={styles.movie_Section}>
           <h1>Your Posts</h1>
           <div className={styles.card_section}>
             {allMovie.map((cur) => {
@@ -52,9 +58,10 @@ const Creation = () => {
             })}
           </div>
       </section>)}
-      {empty && <ErrorPage 
-        errorMessage={"You don't have created any post. Click create to create your first post."}
-      />}
+      {empty && (<div className={commonStyles.center}> 
+           <h2>You have not created any post.</h2><h2>Click create to create your first post</h2>
+           <button onClick={handelClick}>Create</button>
+        </div>)}
       </>
   );
 };

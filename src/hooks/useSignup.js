@@ -1,22 +1,22 @@
 import { useState } from "react";
 import useAuthContext from "./useAuthContext.js"
-import { useNavigate } from "react-router-dom";
 
 
 const useSignup = () => {
-    const navigate = useNavigate();
+
     const {dispatch} = useAuthContext();
     const[error, setError] = useState(null);
     const[loading, setLoading] = useState(null);
 
-    const signup = async (email, first_name, last_name, dob, password) => {
+    const signup = async (email, first_name, last_name, dob, password, verified, otp) => {
     setLoading(true);
     setError(null);
+    console.log(otp);
 
-    const response = await fetch("https://movi-backend-leot.onrender.com/api/user/signup", {
+    const response = await fetch("http://localhost:5000/api/user/signup", {
         method: "POST",
         headers: {"Content-Type": "application/json"}, 
-        body: JSON.stringify({email, first_name, last_name, dob, password})
+        body: JSON.stringify({email, first_name, last_name, dob, password, verified, otp})
       })
       const json = await response.json();
 
@@ -28,14 +28,18 @@ const useSignup = () => {
       }
 
       if(response.ok){
+        setLoading(false);
+        if(json.verified){
         //save the user to local storage
         localStorage.setItem('user', JSON.stringify(json));
 
         //update the auth context
         dispatch({type: "LOGIN", payload: json});
-
-        setLoading(false);
-        navigate("/");
+        return {verified: true}
+        }
+        else{
+          return json.otp;
+        }
       }
 }
 return {signup, loading, error};

@@ -3,14 +3,16 @@
     background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
 }
 
-.movieSection{
+.movie_Section{
+    font-family: Mulish, sans-serif;
     background-color: aliceblue;
     width: 100%;
     padding: 0 5rem 5rem 5rem;
+    min-height: 90vh;
 }
 
     
-.movieSection h1{
+.movie_Section h1{
     width: 100%;
     font-size: 3rem;
     text-align: center;
@@ -32,8 +34,9 @@
         gap: 2rem;
     }
 
-    .movieSection{
+    .movie_Section{
         padding: 0 2rem 0 2rem;
+        font-family: Mulish, sans-serif;
     }
     
 }

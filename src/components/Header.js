@@ -45,9 +45,6 @@ const Header = () => {
             <Link  onClick={handelNavClick} className={styles.navbarItem} to="/">
               Home
             </Link>
-            <Link onClick={handelNavClick} className={styles.navbarItem} to="/about">
-              About
-            </Link>
           {!user && (
             <>
                 <Link onClick={handelNavClick} className={styles.navbarItem} to="/login">
@@ -57,6 +54,9 @@ const Header = () => {
           )}
           {user && 
           (<>
+                <Link onClick={handelNavClick} className={styles.navbarItem} to="/watchList">
+                  WatchList
+                </Link>   
                 <Link onClick={handelNavClick} className={styles.navbarItem} to="/myCreation">
                   Creations
                 </Link>
@@ -70,6 +70,9 @@ const Header = () => {
           </button>
           </>
           )}
+          <Link onClick={handelNavClick} className={styles.navbarItem} to="/about">
+              About
+          </Link>
       </div>)}
     </>
   );

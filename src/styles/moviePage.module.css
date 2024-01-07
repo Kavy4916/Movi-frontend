@@ -5,7 +5,7 @@
 }
 
 .movie_title{
-  color: #9349a9;
+  color: #a432c7;
   font-size: 30px;
   text-transform: capitalize;
 }
@@ -35,7 +35,20 @@
 }
 
 
-
+.whatchlist_button{
+  width: 150px;
+  font-size: 2rem;
+  font-family: Mulish, sans-serif;
+  color: white;
+  padding: 5px 5px 5px 10px;
+  border-top-left-radius: 5rem;
+  border-bottom-left-radius: 5rem;
+  position: fixed;
+  bottom: 10%;
+  right: 0;
+  background-color: #9349a9;
+  cursor: pointer;
+}
 /*Youtube*/
 .youtube_section{
   height: 320px;
@@ -133,6 +146,12 @@
     padding: 1px 5px 3px 5px;
     border-radius: 15px;
   }
+
+  .youtube{
+    width: 100%;
+    height: 250px;
+  }
+  
   
 }
 
